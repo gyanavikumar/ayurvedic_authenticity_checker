@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authenticity Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Authenticity Checker</h1>
+
+        <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="file">Select Input File (CSV, TSV, or Excel):</label><br><br>
+            <input type="file" id="file" name="file" accept=".csv, .tsv, .xls, .xlsx" required><br><br>
+            <button type="submit" class="btn">Upload and Process</button>
+        </form>
+
+        <!-- Loading message to display while processing -->
+        <div id="loading-message" style="display: none; text-align: center; margin-top: 20px;">
+            <p>Please wait while we process your data...</p>
+        </div>
+    </div>
+</body>
+</html>
